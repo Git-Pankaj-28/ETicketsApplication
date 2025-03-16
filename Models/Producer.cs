@@ -9,10 +9,13 @@ namespace ETicketsApplication.Models
         [Key]
         public int Id { get; set; }
 
+        [Display(Name = "Profile Picture")] // 28 to show in UI instead on view using display prop to show it
         public string ProfilePictureURL { get; set; }
 
+        [Display(Name = "FullName")]
         public string FullName { get; set; }
 
+        [Display(Name = "Biography")]
         public string Bio { get; set; }
 
         //8 Relationships a producer can have multiple movies , one to many relationship 

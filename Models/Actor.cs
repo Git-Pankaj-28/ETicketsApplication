@@ -8,10 +8,13 @@ namespace ETicketsApplication.Models
         [Key]
         public int Id { get; set; }
 
+        [Display(Name ="Profile Picture")] // 27 to show in UI instead on view using display prop to show it
         public string ProfilePictureURL { get; set; }
 
+        [Display(Name = "Full Name")]
         public string FullName { get; set; }
 
+        [Display(Name = "Biogrpahy")]
         public string Bio { get; set; }
 
         //11. realtionship  manytomany

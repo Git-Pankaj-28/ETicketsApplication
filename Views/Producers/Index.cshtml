@@ -1,0 +1,57 @@
+﻿@*// 28 creating view for Producers next to 29 CinemaView   and from bootstrap icon site add add link in layout.css file *@
+@*Define model*@
+@model IEnumerable<Producer>
+
+@*define viewdata*@
+
+@{
+    ViewData["Title"] = "List of Producer";
+}
+
+@* write code*@
+
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+
+        <table class="table">
+            @*<thead>profile Picture URL</thead>*@   @*//if we are hardcoded it*@
+
+            <thead>
+                <tr class="text-center">
+                    <th>@Html.DisplayNameFor(model => model.ProfilePictureURL)</th> @* // like to remove typo error use IEnumber model <Actor></Actor>*@
+                    <th>@Html.DisplayNameFor(model => model.FullName)</th>
+                    <th>@Html.DisplayNameFor(model => model.Bio)</th>
+                    <th>Action</th>
+            </thead>
+            </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="align-middle">
+                            <img class="rounded-circle" src="@item.ProfilePictureURL" alt=" @item.FullName" style="max-width:150px" ; />
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(ModelItem => item.FullName)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(ModelItem => item.Bio)
+                        </td>
+                        <td class="align-middle">
+                            <a a class="btn btn-outline-primary"><i class="bi bi-pencil-square"> </i>Edit</a> |
+                            <a a class="btn btn-outline-info"><i class="bi bi-eye"> </i>Details</a> |
+                            <a a class="btn btn-danger"><i class="bi bi-trash"> </i>Delete</a>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
